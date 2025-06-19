@@ -12,7 +12,7 @@ def main():
         
     for local_dir, rclone_dir in backup_list:
         print(f"Putting {local_dir} in {REMOTE}:{rclone_dir}...")
-        subprocess.run(["rclone", "sync", local_dir, f"{REMOTE}:{rclone_dir}"], capture_output=True, check=True)
+        subprocess.run(["rclone", "copy", local_dir, f"{REMOTE}:{rclone_dir}"], capture_output=True, check=True)
         print("Done!")
         
 
